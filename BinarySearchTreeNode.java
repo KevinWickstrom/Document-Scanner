@@ -3,6 +3,8 @@ package documentScanner;
 
 public class BinarySearchTreeNode {
 	private String key;
+	private int hash;
+	private int count;
 	private BinarySearchTreeNode right;
 	private BinarySearchTreeNode left;
 	
@@ -14,8 +16,30 @@ public class BinarySearchTreeNode {
 	
 	public BinarySearchTreeNode(String key) {
 		this.key = key;
+		count = 1;
 		right = null;
 		left = null;
+	}
+	
+	public BinarySearchTreeNode(String key, int hash) {
+		this.key = key;
+		this.hash = hash;
+		count = 1;
+		right = null;
+		left = null;
+	}
+	
+	public void incrementCount() {
+		count++;
+	}
+	
+	public boolean isLeaf() {
+		if(getLeftChild() == null && getRightChild() == null) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	public void setKey(String key) {
@@ -41,4 +65,22 @@ public class BinarySearchTreeNode {
 	public BinarySearchTreeNode getRightChild() {
 		return right;
 	}
+
+	public int getHash() {
+		return hash;
+	}
+
+	public void setHash(int hash) {
+		this.hash = hash;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+	
+	
 }
