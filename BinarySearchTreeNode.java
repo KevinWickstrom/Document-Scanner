@@ -42,6 +42,17 @@ public class BinarySearchTreeNode {
 		}
 	}
 	
+	public int numChildren() {
+		int num = 0;
+		if(getLeftChild() != null) {
+			num++;
+		}
+		if(getRightChild() != null ) {
+			num++;
+		}
+		return num;
+	}
+	
 	public void setKey(String key) {
 		this.key = key;
 	}

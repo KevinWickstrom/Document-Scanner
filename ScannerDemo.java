@@ -6,21 +6,16 @@ public class ScannerDemo {
 		
 		BinarySearchTree bst = new BinarySearchTree();
 		
-		System.out.println("///");
-		bst.print_Preorder();
-		System.out.println("///");
-		bst.print_Inorder();
-		System.out.println("///");
-		bst.print_Postorder();
 		bst.insert("Hej");
 		bst.insert("Abc");
 		bst.insert("Jag");
 		bst.insert("Makaroner");
 		
-		System.out.println(bst.findMin(bst.getRoot()).getKey());
+		
+		System.out.println("Min: " + bst.findMin(bst.getRoot()).getKey());
 		
 		BinarySearchTreeNode n = bst.search("Hej");
-		if(n == null) {
+		/*if(n == null) {
 			System.out.println("oh no, null");
 		}
 		else {
@@ -33,24 +28,36 @@ public class ScannerDemo {
 		}
 		else {
 			System.out.println(n.getKey() + " " + n.getHash() + " " + n.getCount());
-		}
+		}*/
 		
-		System.out.println("///");
+		System.out.println("Printing preorder:");
 		bst.print_Preorder();
-		System.out.println("///");
-		bst.print_Inorder();
-		System.out.println("///");
-		bst.print_Postorder();
-		
+		System.out.println("///Preorder done///");
+
 		bst.insert("Mig");
 		bst.insert("Hej");
-		
+		System.out.println("Printing preorder:");
+		bst.print_Preorder();
+		System.out.println("///Preorder done///");
+		bst.delete("Hej");
+		System.out.println("Printing preorder:");
+		bst.print_Preorder();
+		System.out.println("///Preorder done///");
+
+		bst.delete("afasdpkjdas");
+		System.out.println("///");
+		bst.print_Preorder();
+		bst.delete("Abc");
+		System.out.println("///");
+		bst.print_Preorder();
+		bst.delete("Makaroner");
+		System.out.println("///");
+		bst.print_Preorder();
+		bst.delete("Mig");
 		System.out.println("///");
 		bst.print_Preorder();
 		System.out.println("///");
-		bst.print_Inorder();
-		System.out.println("///");
-		bst.print_Postorder();
+
 		
 	}
 }
