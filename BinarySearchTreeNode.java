@@ -33,6 +33,7 @@ public class BinarySearchTreeNode {
 		count++;
 	}
 	
+	// written by Axel
 	public boolean isLeaf() {
 		if(getLeftChild() == null && getRightChild() == null) {
 			return true;
@@ -42,6 +43,7 @@ public class BinarySearchTreeNode {
 		}
 	}
 	
+	// written by Axel
 	public int numChildren() {
 		int num = 0;
 		if(getLeftChild() != null) {

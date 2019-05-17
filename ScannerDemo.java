@@ -11,7 +11,6 @@ public class ScannerDemo {
 		bst.insert("Jag");
 		bst.insert("Makaroner");
 		
-		
 		System.out.println("Min: " + bst.findMin(bst.getRoot()).getKey());
 		
 		BinarySearchTreeNode n = bst.search("Hej");
@@ -30,33 +29,32 @@ public class ScannerDemo {
 			System.out.println(n.getKey() + " " + n.getHash() + " " + n.getCount());
 		}*/
 		
-		System.out.println("Printing preorder:");
-		bst.print_Preorder();
-		System.out.println("///Preorder done///");
+		System.out.println("Printing breadth first1");
+		bst.print_BreadthFirst();
 
 		bst.insert("Mig");
+		System.out.println("Printing breadth first2");
+		bst.print_BreadthFirst();
 		bst.insert("Hej");
-		System.out.println("Printing preorder:");
-		bst.print_Preorder();
-		System.out.println("///Preorder done///");
-		bst.delete("Hej");
-		System.out.println("Printing preorder:");
-		bst.print_Preorder();
-		System.out.println("///Preorder done///");
-
+		
+		
+		System.out.println("Printing breadth first3");
+		bst.print_BreadthFirst();
 		bst.delete("afasdpkjdas");
-		System.out.println("///");
-		bst.print_Preorder();
+		bst.delete("Hej");
+		System.out.println("Printing breadth first4");
+		bst.print_BreadthFirst();
 		bst.delete("Abc");
-		System.out.println("///");
-		bst.print_Preorder();
+		System.out.println("Printing breadth first5");
+		bst.print_BreadthFirst();
 		bst.delete("Makaroner");
-		System.out.println("///");
-		bst.print_Preorder();
+		System.out.println("Printing breadth first6");
+		bst.print_BreadthFirst();
 		bst.delete("Mig");
-		System.out.println("///");
-		bst.print_Preorder();
-		System.out.println("///");
+		System.out.println("Printing breadth first7");
+		bst.print_BreadthFirst();
+		
+		
 
 		
 	}

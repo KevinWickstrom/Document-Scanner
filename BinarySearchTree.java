@@ -1,5 +1,5 @@
 package documentScanner;
-
+import java.util.ArrayList;
 // AUTHOR: AXEL PONTEN
 public class BinarySearchTree {
 
@@ -24,7 +24,7 @@ public class BinarySearchTree {
 			power = (i == 0) ? 3 : 2;
 			hash += Math.pow(base, power) * Math.PI / (i + 1);
 		}
-		return (int) (-1 * hash * Math.E * 5 / key.length());
+		return (int) (hash * Math.E * 5 / key.length());
 	}
 
 	// INSERT
@@ -224,6 +224,8 @@ public class BinarySearchTree {
 			return findMin(current.getLeftChild());
 		}
 	}
+	
+	
 
 	// PRINTING METHODS
 	public void print_Preorder() {
@@ -275,6 +277,29 @@ public class BinarySearchTree {
 		print_Postorder(n.getLeftChild());
 		print_Postorder(n.getRightChild());
 		System.out.println(n.getKey() + " " + n.getCount());
+	}
+	
+	// just for my own use
+	public void print_BreadthFirst() {
+		ArrayList<BinarySearchTreeNode> queue = new ArrayList<BinarySearchTreeNode>();
+		queue.add(root);
+		while(!queue.isEmpty()) {
+			int size = queue.size();
+			for(int i = 0; i < size; i++) {
+				BinarySearchTreeNode n = queue.get(0);
+				System.out.print(n.getKey() + " " + n.getHash() + "\t");
+				queue.remove(0);
+				if(n.getLeftChild() != null) {
+					queue.add(n.getLeftChild());	
+				}
+				if(n.getRightChild() != null) {
+					queue.add(n.getRightChild());
+				}
+				
+			}
+			System.out.println();
+		}
+		
 	}
 
 	// SETTERS AND GETTERS
