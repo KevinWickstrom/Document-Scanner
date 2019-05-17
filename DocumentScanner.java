@@ -27,13 +27,9 @@ public class DocumentScanner {
 	}
 	
 	//Finds the count of a specific word
-	public int search(String word) {
+	public void search(String word) {
 		BinarySearchTreeNode target = bst.search(word);
-		if(target == null) {
-			return 0;
-		} else {
-			return target.getCount();
-		}
+		System.out.println(word + " count: " + target.getCount());
 	}
 	
 	//Prints the word with the most occurrences and its count
