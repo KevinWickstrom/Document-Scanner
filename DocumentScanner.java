@@ -20,7 +20,11 @@ public class DocumentScanner {
 		Scanner infile = new Scanner(new File(fileName));
 		
 		while (infile.hasNext()) {
-			bst.insert(infile.next());
+			String word = infile.next();
+			word.toLowerCase();
+			if (word.charAt(word.length()-1) == '.')
+				word = word.substring(0, word.length()-1);
+			bst.insert(word);
 		}
 		scan.close();
 		infile.close();
